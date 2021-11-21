@@ -1,0 +1,22 @@
+.card{
+  &-deck{
+    width: 400px;
+    height: 796px;
+    background: #F8F8F8;
+    border: 1px solid #C2C2C2;
+    box-shadow: 0px 2px 4px rgba(103, 103, 103, 0.5);
+    border-radius: 8px;
+    padding: 16px;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  &:hover{
+    box-shadow: 0px 2px 4px rgba(103, 103, 103, 0.5);
+  }
+
+  &.active{
+    border: 1px solid map-get($theme-colors, 'light');
+    box-shadow: 0px 2px 4px rgba(103, 103, 103, 0.5);
+  }
+}

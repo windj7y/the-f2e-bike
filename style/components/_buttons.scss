@@ -1,0 +1,13 @@
+.btn-outline-{
+  &primary{
+    &:hover{
+      color: map-get($theme-colors, 'primary');
+      background: map-get($theme-colors, 'third');
+    }
+          
+    &.active{
+      color: $white;
+      background: map-get($theme-colors, 'primary');
+    }
+  }
+}

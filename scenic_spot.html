@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GoBike</title>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+  <link rel="stylesheet" href="style/all.css">
+</head>
+<body>
+  <nav class="navbar py-4">
+    <div class="container">
+      <h1>
+        <a href="index.html" class="logo">GoBike</a>
+      </h1>
+      <div class="ms-auto d-none d-md-block">
+        <a href="index.html" class="btn btn-outline-primary fs-7 fw-medium me-2">借 / 還車</a>
+        <a href="bike_lane.html" class="btn btn-outline-primary active fs-7 fw-medium">自行車道</a>
+      </div>
+      <div class="ms-auto d-md-none">
+        <select class="form-select">
+          <option value="1" selected>借 / 還車</option>
+          <option value="2">自行車道</option>
+        </select>
+      </div>
+    </div>
+  </nav>
+  <main class="bg pt-8 pt-md-12 ps-md-12 mx-auto d-flex">
+    <div class="card-deck me-8">
+      <form class="d-flex mb-10">
+        <select class="form-select px-6 me-2 w-30">
+          <option value="" hidden selected disabled>縣 / 市</option>
+          <option value="Taipei">臺北市</option>
+          <option value="NewTaipei">新北市</option>
+          <option value="Taichung">臺中市</option>
+          <option value="Kaohsiung">高雄市</option>
+          <option value="Tainan">臺南市</option>
+        </select>
+        <div class="position-relative w-70">
+          <input type="text" class="form-control pe-12" placeholder="輸入路名或站名">
+          <a href="#" class="position-absolute top-0 end-0 p-4 link-dark">
+            <span class="material-icons text-dark">search</span>
+          </a>
+        </div>
+      </form>
+      <h3 class="h6 text-info mb-2">搜尋自行車道</h3>
+      <ul class="list-unstyled">
+        <li class="card mb-2 active">
+          <div class="card-body">
+            <div class="d-flex justify-content-between boder border-bottom pb-2">
+              <p class="fs-6 fw-medium text-info">新北</p>
+              <p class="fs-6 fw-medium text-primary">約 5.4 km</p>
+            </div>
+            <h2 class="h5 fw-bold text-dark pt-6 pb-7">自行車道名稱自行車道名稱</h2>
+            <div class="d-flex text-light">
+              <p class="fs-8 w-50">起點</p>
+              <p class="fs-8 w-50">
+                <span class="material-icons fs-6 me-4 align-middle">
+                  sync_alt
+                </span>
+                終點
+              </p>
+            </div>
+            <button class="btn btn-primary text-white mt-4 w-100">
+              附近景點或餐廳
+            </button>
+          </div>
+        </li>
+        <li class="card mb-2">
+          <div class="card-body">
+            <div class="d-flex justify-content-between boder border-bottom pb-2">
+              <p class="fs-6 fw-medium text-info">新北</p>
+              <p class="fs-6 fw-medium text-primary">約 5.4 km</p>
+            </div>
+            <h2 class="h5 fw-bold text-dark pt-6 pb-7">自行車道名稱自行車道名稱</h2>
+            <div class="d-flex text-light">
+              <p class="fs-8 w-50">起點</p>
+              <p class="fs-8 w-50">
+                <span class="material-icons fs-6 me-4 align-middle">
+                  sync_alt
+                </span>
+                終點
+              </p>
+            </div>
+            <button class="btn btn-primary text-white mt-4 w-100 d-none">
+              附近景點或餐廳
+            </button>
+          </div>
+        </li>
+        <li class="card mb-2">
+          <div class="card-body">
+            <div class="d-flex justify-content-between boder border-bottom pb-2">
+              <p class="fs-6 fw-medium text-info">新北</p>
+              <p class="fs-6 fw-medium text-primary">約 5.4 km</p>
+            </div>
+            <h2 class="h5 fw-bold text-dark pt-6 pb-7">自行車道名稱自行車道名稱</h2>
+            <div class="d-flex text-light">
+              <p class="fs-8 w-50">起點</p>
+              <p class="fs-8 w-50">
+                <span class="material-icons fs-6 me-4 align-middle">
+                  sync_alt
+                </span>
+                終點
+              </p>
+            </div>
+            <button class="btn btn-primary text-white mt-4 w-100 d-none">
+              附近景點或餐廳
+            </button>
+          </div>
+        </li>
+        <li class="card mb-2">
+          <div class="card-body">
+            <div class="d-flex justify-content-between boder border-bottom pb-2">
+              <p class="fs-6 fw-medium text-info">新北</p>
+              <p class="fs-6 fw-medium text-primary">約 5.4 km</p>
+            </div>
+            <h2 class="h5 fw-bold text-dark pt-6 pb-7">自行車道名稱自行車道名稱</h2>
+            <div class="d-flex text-light">
+              <p class="fs-8 w-50">起點</p>
+              <p class="fs-8 w-50">
+                <span class="material-icons fs-6 me-4 align-middle">
+                  sync_alt
+                </span>
+                終點
+              </p>
+            </div>
+            <button class="btn btn-primary text-white mt-4 w-100 d-none">
+              附近景點或餐廳
+            </button>
+          </div>
+        </li>
+        <li class="card mb-2">
+          <div class="card-body">
+            <div class="d-flex justify-content-between boder border-bottom pb-2">
+              <p class="fs-6 fw-medium text-info">新北</p>
+              <p class="fs-6 fw-medium text-primary">約 5.4 km</p>
+            </div>
+            <h2 class="h5 fw-bold text-dark pt-6 pb-7">自行車道名稱自行車道名稱</h2>
+            <div class="d-flex text-light">
+              <p class="fs-8 w-50">起點</p>
+              <p class="fs-8 w-50">
+                <span class="material-icons fs-6 me-4 align-middle">
+                  sync_alt
+                </span>
+                終點
+              </p>
+            </div>
+            <button class="btn btn-primary text-white mt-4 w-100 d-none">
+              附近景點或餐廳
+            </button>
+          </div>
+        </li>                                
+      </ul>
+    </div>
+    <div class="card-deck">
+      <div class="position-relative mb-6">
+        <h3 class="h5 fs-bold text-gray-dark text-center">松山文創園區</h3>
+        <button type="button" class="btn-close text-gray-dark position-absolute top-0 end-0" aria-label="Close"></button>
+      </div>
+      <img src="img/scenery.png" class="w-100 mb-6" alt="scenery">
+      <div class="card">
+        <div class="card-body text-dark">
+          <ul class="list-unstyled">
+            <li class="d-flex mb-6">
+              <span class="material-icons-outlined me-5 text-primary">location_on</span>
+              <p>新北市231新店區光明街272號</p>
+            </li>
+            <li class="d-flex mb-6">
+              <span class="material-icons-outlined me-5 text-primary">phone</span>
+              <p>886-2-29126883</p>
+            </li>
+            <li class="d-flex mb-6">
+              <span class="material-icons-outlined me-5 text-primary">schedule</span>
+              <p>早上 11:00 至晚上 10:00 (週日休)</p>
+            </li>
+            <li class="d-flex mb-6">
+              <span class="material-icons-outlined me-5 text-primary">info</span>
+              <p>景點介紹</p>
+            </li>
+          </ul>
+          <p>
+            位於新店光明街上的「豆花工房」，於2007三月份正式開幕，由一對夫妻白手起家、共同創業。店面充滿中國風的設計感，加上燈光與掛飾搭配，讓簡單的豆花店，看起來更具都會時尚感。兩夫妻當初在摸索創業的過程中，不但吃遍北部的豆花店，回家後一一研究並尋找好的食材，花了不少功夫與時間，堅持要給顧客最好的口感。加上自己的創意，兩夫妻研發出獨一無二的「黑豆花」及「抹茶豆花」，成為開店後的人氣暢銷單品。無論是夏天或冬天，豆花工房也推出雪綿冰、燒仙草等不同的季節商品，兩夫妻的用心經營，值得您的品嚐與肯定。
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jsSHA/3.2.0/sha.js"></script>
+  <script src="https://unpkg.com/vue@next"></script>  
+  <script src="js/all.js"></script>
+</body>
+</html>

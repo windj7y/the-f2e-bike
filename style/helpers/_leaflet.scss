@@ -1,0 +1,14 @@
+#map{
+  height: 100vh;
+}
+
+.map-content{
+  position: absolute;
+  top: 40px;
+  left: 55px;
+  z-index: 500;
+}
+
+.leaflet-container{
+  font-family: 'Zen Maru Gothic', sans-serif;
+}

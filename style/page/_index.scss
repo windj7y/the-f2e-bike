@@ -1,0 +1,12 @@
+.logo{
+  width: 100px;
+  height: 40px;
+  background: url(../img/LOGO-Gobike.png) no-repeat;
+  @include hide-text;
+}
+
+.bg{
+  max-width: 1440px;
+  height: 100vh;
+  background: url(../img/map.png) no-repeat;
+}
